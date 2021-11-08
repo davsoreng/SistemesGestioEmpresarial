@@ -7,9 +7,9 @@ numero1 = 4
 numero2 = 6
 # Crearem una funcion per a sumar.
 def suma(x, y):
-    print(x+y)
+    return x+y
 # Cridem a la funció pasant les 2 variables.
-suma(numero1, numero2)
+print(suma(numero1, numero2))#cridant a la funció i pasant-li dues varibales i ademes imprimint-ho per consola
 #
 print("---------------------------------------")
 #
@@ -21,7 +21,7 @@ def incremeto(x):
         x[i] = j * 2
     print(x)
 # Ara comprobarem el resultat cridant a la funció i pasant-li la llista.
-incremeto(valors)
+incremeto(valors)#cridem a la funció i li pasem la llista creada abans
 #
 print("---------------------------------------")
 #
@@ -34,6 +34,6 @@ def llista(x):
     valorsNous = x[:]
     for i, j in enumerate(valorsNous):
         valorsNous[i] = j * 2
-    print(valorsNous)
+    return valorsNous
 # Ara anem a comprobar el resultat
-llista(valors)
+print(llista(valors))#cridant a la funció i pasant-li la llista i ademes imprimint-ho per consola
