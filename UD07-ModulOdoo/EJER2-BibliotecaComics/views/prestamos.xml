@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id='prestamo_act' model='ir.actions.act_window'>
+        <field name="name">Lista de Prestamos</field>
+        <field name="res_model">prestamo.biblioteca</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_prestamo" parent="biblioteca_base_menu" action="prestamo_act"/>
+
+    <record id="view_prestamo_form" model="ir.ui.view">
+        <field name="name">Formulario Prestamos</field>
+        <field name="model">prestamo.biblioteca</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="comic"/>
+                    <field name="socio"/>
+                </group>
+                <group>
+                    <field name="inicio_fecha"/>
+                    <field name="fin_fecha"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    
+    <record id="view_prestamo_tree" model="ir.ui.view">
+        <field name="name">Vista Prestamos</field>
+        <field name="model">prestamo.biblioteca</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="comic"/>
+                <field name="socio"/>
+                <field name="inicio_fecha"/>
+                <field name="fin_fecha"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

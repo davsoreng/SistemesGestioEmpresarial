@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='ciclo_act' model='ir.actions.act_window'>
+        <field name="name">Lista Ciclos</field>
+        <field name="res_model">ciclo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Instituo" id="menu_principal"/>
+    <menuitem name="Ciclos" id="ciclo_menu" parent="menu_principal" action="ciclo_act"/>
+
+    <record id="view_ciclo_form" model="ir.ui.view">
+        <field name="name">Formulario de Ciclos</field>
+        <field name="model">ciclo</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="nombre"/>
+                    <field name="descripcion"/>
+                    <field name="modulo"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_ciclo_tree" model="ir.ui.view">
+        <field name="name">Lista de ciclos</field>
+        <field name="model">ciclo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"/>
+                <field name="descripcion"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

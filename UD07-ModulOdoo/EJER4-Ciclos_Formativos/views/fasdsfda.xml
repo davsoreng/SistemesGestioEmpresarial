@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='alumno_act' model='ir.actions.act_window'>
+        <field name="name">Lista Alumnos</field>
+        <field name="res_model">alumno</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Alumnos" id="alumno_menu" parent="menu_main" action="alumno_act"/>
+
+    <record id="view_alumno_form" model="ir.ui.view">
+        <field name="name">Formulario de Alumnos</field>
+        <field name="model">alumno</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="nombre"/>
+                    <field name="apellido"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_alumno_tree" model="ir.ui.view">
+        <field name="name">Lista de Alumnos</field>
+        <field name="model">alumno</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="nombre"/>
+                <field name="apellido"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

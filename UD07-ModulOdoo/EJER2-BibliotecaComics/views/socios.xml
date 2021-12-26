@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id='socio_act' model='ir.actions.act_window'>
+        <field name="name">Lista de Socios</field>
+        <field name="res_model">socio.biblioteca</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_socio" parent="biblioteca_base_menu" action="socio_act"/>
+
+    <record id="view_socio_form" model="ir.ui.view">
+        <field name="name">Formulario Socios</field>
+        <field name="model">socio.biblioteca</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="id"/>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="apellido"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+    
+    <record id="view_socio_tree" model="ir.ui.view">
+        <field name="name">Vista Socios</field>
+        <field name="model">socio.biblioteca</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="nombre"/>
+                <field name="apellido"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

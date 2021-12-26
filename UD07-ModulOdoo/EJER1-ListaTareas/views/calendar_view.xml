@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="lista_tareas_calendar_view" model="ir.ui.view">
+        <field name="model">lista_tareas.lista</field>
+        <field name="arch" type="xml">
+            <calendar date_start="fecha">
+                <field name="tarea" />
+            </calendar>
+        </field>
+    </record>
+
+    <record id='action_tareas_calender' model='ir.actions.act_window'>
+        <field name="name">Calendario Tareas</field>
+        <field name="res_model">lista_tareas.lista</field>
+        <field name="view_mode">calendar,tree,form</field> 
+    </record>
+
+    <menuitem id="menu_top" name="Calendario Tareas"/>
+    <menuitem id="menu_tareas_calender" parent="menu_top" action="action_tareas_calender"/>
+</odoo>

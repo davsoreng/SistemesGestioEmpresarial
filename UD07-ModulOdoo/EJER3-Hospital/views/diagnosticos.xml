@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='diagnostico_act' model='ir.actions.act_window'>
+        <field name="name">Lista de Diagnosticos</field>
+        <field name="res_model">diagnostico</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Aplicacion Hospital" id="hospital_menu"/>
+    <menuitem name="Diagnosticos" id="menu_diagnostico" parent="hospital_menu" action="diagnostico_act"/>
+
+    <record id="view_diagnostico_form" model="ir.ui.view">
+        <field name="name">Formulario de Consultas</field>
+        <field name="model">diagnostico</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="medico"/>
+                    <field name="paciente"/>
+                </group>
+                <group>
+                    <field name="descripcion"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_diagnostico_tree" model="ir.ui.view">
+        <field name="name">Lista de Consultas</field>
+        <field name="model">diagnostico</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="medico"/>
+                <field name="paciente"/>
+                <field name="descripcion"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
