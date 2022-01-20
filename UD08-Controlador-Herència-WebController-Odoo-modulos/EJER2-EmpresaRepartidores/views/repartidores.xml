@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='empresa_repartidores_action' model='ir.actions.act_window'>
+        <field name="name">Lista de Repartidores</field>
+        <field name="res_model">empresa.repartidores</field>
+        <!-- Indicamos que este modelo se puede ver en tree y form -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Empresa" id="main_menu_empresa" />
+    <menuitem name="Repartidores" id="repatidores_empresa" parent="main_menu_empresa" action="empresa_repartidores_action" />
+
+    <!-- Vista formulario -->
+    <record id="empresa_repartidores_view_form" model="ir.ui.view">
+        <field name="name">Formulario Repartidores</field>
+        <field name="model">empresa.repartidores</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="apellido"/>
+                        <field name="dni"/>
+                        <field name="telefono"/>
+                        <field name="tieneCarnet"/>
+                        <field name="tipoCarnet"/>
+                    </group>
+                    <group>
+                        <field name="foto" widget="image" class="oe_avatar"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="empresa_repartidores_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Repartidores</field>
+        <field name="model">empresa.repartidores</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="dni"/>
+                <field name="nombre" />
+                <field name="telefono"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

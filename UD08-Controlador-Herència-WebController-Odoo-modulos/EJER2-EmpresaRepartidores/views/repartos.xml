@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='empresa_repartos_action' model='ir.actions.act_window'>
+        <field name="name">Lista de Repartos</field>
+        <field name="res_model">empresa.repartos</field>
+        <!-- Indicamos que este modelo se puede ver en tree y form -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Empresa" id="main_menu_empresa" />
+    <menuitem name="Repartos" id="repartos_empresa" parent="main_menu_empresa" action="empresa_repartos_action" />
+
+    <!-- Vista formulario -->
+    <record id="empresa_repartos_view_form" model="ir.ui.view">
+        <field name="name">Formulario Repartos</field>
+        <field name="model">empresa.repartos</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="id"/>
+                        <field name="repartidor"/>
+                        <field name="matricula"/>
+                        <field name="kilometros"/>
+                        <field name="KgPaquete"/>
+                        <field name="tamanoPaquete"/>
+                        <field name="estado"/>
+                        <field name="emisor"/>
+                        <field name="Cliente"/>
+                        <field name="fechaActual"/>
+                        <field name="fechaInicio"/>
+                        <field name="fechaRetorno"/>
+                        <field name="fechaEntrega"/>
+                    </group>
+                    <group>
+                        <field name="observaciones"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="empresa_repartos_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Repartos</field>
+        <field name="model">empresa.repartos</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="estado"/>
+                <field name="emisor"/>
+                <field name="Cliente"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

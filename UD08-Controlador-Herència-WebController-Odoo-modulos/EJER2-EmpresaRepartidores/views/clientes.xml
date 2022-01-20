@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='empresa_clientes_action' model='ir.actions.act_window'>
+        <field name="name">Lista de clientes</field>
+        <field name="res_model">empresa.clientes</field>
+        <!-- Indicamos que este modelo se puede ver en tree y form -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Empresa" id="main_menu_empresa" />
+    <menuitem name="Clientes" id="clientes_empresa" parent="main_menu_empresa" action="empresa_clientes_action" />
+
+    <!-- Vista formulario -->
+    <record id="empresa_clientes_view_form" model="ir.ui.view">
+        <field name="name">Formulario clientes</field>
+        <field name="model">empresa.clientes</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="apellido"/>
+                        <field name="dni"/>
+                        <field name="telefono"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="empresa_clientes_view_tree" model="ir.ui.view">
+        <field name="name">Lista de clientes</field>
+        <field name="model">empresa.clientes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="dni"/>
+                <field name="nombre"/>
+                <field name="apellido"/>
+                <field name="telefono"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
